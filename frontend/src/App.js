@@ -1,9 +1,17 @@
-import './App.css';
+import './App.scss';
 
+import { About, Footer, Header, Skills, Testimonial, Work } from './container';
+import { Navbar } from './components';
 function App() {
   return (
-    <div className="App">
-      <h1>React App</h1>
+    <div className="app">
+      <Navbar />
+      <Header />
+      <About />
+      <Work />
+      <Skills />
+      <Testimonial />
+      <Footer />
     </div>
   );
 }
