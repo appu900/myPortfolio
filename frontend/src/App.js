@@ -5,7 +5,7 @@ import { Navbar } from './components';
 function App() {
   return (
     <div className="app">
-      <Navbar />
+      {/* <Navbar /> */}
       <Header />
       <About />
       <Work />
