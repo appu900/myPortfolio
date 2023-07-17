@@ -3,6 +3,17 @@ import { motion } from "framer-motion";
 import { images } from "../../constants";
 import "./Header.scss";
 
+const scaleVariants = {
+  whileInView: {
+    scale: [0, 1],
+    opacity: [0, 1],
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
+
 function Header() {
   return (
     <div className="app__header app__flex">
@@ -31,10 +42,29 @@ function Header() {
             className="app__header-img"
           >
             <img src={images.profile} alt="profile_background" />
-
+            <motion.img
+              whileInView={{ scale: [0, 1] }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+              className="overlay-circle"
+              src={images.circle}
+              alt="profile_circle"
+            />
           </motion.div>
 
-          <motion.div></motion.div>
+          <motion.div
+            variant={scaleVariants}
+            whileInView={scaleVariants.whileInView}
+            className="app__header-circles"
+          >
+            {/* language icons will appear here as a floating icon */}
+            {[images.cPlusPlus, images.node, images.javascript].map(
+              (circle, index) => (
+                <div className="circle-cmp app__flex" key={`circle-${index}`}>
+                  <img src={circle} alt="circle" />
+                </div>
+              )
+            )}
+          </motion.div>
         </div>
       </motion.div>
     </div>

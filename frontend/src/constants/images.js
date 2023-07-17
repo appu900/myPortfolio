@@ -21,6 +21,7 @@ import react from '../assets/react.png'
 import profile from '../assets/profile.png'
 import redux from '../assets/redux.png'
 import typeScript from '../assets/typescript.png'
+import circle from '../assets/circle.svg'
 
 export default {
     about1,
@@ -45,5 +46,6 @@ export default {
     react,
     profile,
     redux,
-    typeScript
+    typeScript,
+    circle
 };
