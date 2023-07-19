@@ -35,37 +35,37 @@ function Header() {
             <p className="p-text">Web Developer</p>
             <p className="p-text">Competitive Coder</p>
           </div>
-
-          <motion.div
-            whileInView={{ opacity: [0, 1] }}
-            transition={{ duration: 0.5, delayChildren: 0.5 }}
-            className="app__header-img"
-          >
-            <img src={images.profile} alt="profile_background" />
-            <motion.img
-              whileInView={{ scale: [0, 1] }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-              className="overlay-circle"
-              src={images.circle}
-              alt="profile_circle"
-            />
-          </motion.div>
-
-          <motion.div
-            variant={scaleVariants}
-            whileInView={scaleVariants.whileInView}
-            className="app__header-circles"
-          >
-            {/* language icons will appear here as a floating icon */}
-            {[images.cPlusPlus, images.node, images.javascript].map(
-              (circle, index) => (
-                <div className="circle-cmp app__flex" key={`circle-${index}`}>
-                  <img src={circle} alt="circle" />
-                </div>
-              )
-            )}
-          </motion.div>
         </div>
+      </motion.div>
+
+      <motion.div
+        whileInView={{ opacity: [0, 1] }}
+        transition={{ duration: 0.5, delayChildren: 0.5 }}
+        className="app__header-img"
+      >
+        <img src={images.profile} alt="profile_background" />
+        <motion.img
+          whileInView={{ scale: [0, 1] }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="overlay_circle"
+          src={images.circle}
+          alt="profile_circle"
+        />
+      </motion.div>
+
+      <motion.div
+        variant={scaleVariants}
+        whileInView={scaleVariants.whileInView}
+        className="app__header-circles"
+      >
+        {/* language icons will appear here as a floating icon */}
+        {[images.cPlusPlus, images.node, images.javascript].map(
+          (circle, index) => (
+            <div className="circle-cmp app__flex" key={`circle-${index}`}>
+              <img src={circle} alt="circle" />
+            </div>
+          )
+        )}
       </motion.div>
     </div>
   );
