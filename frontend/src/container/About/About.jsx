@@ -1,40 +1,35 @@
 import React, { useState, useEffect } from "react";
 import "./About.scss";
 import { motion } from "framer-motion";
+import { images } from '../../constants';
 
 const abouts = [
   {
     title: 'Web Developement',
     description: 'I am a good developer',
-    imageUrl: ''
+    imageUrl: images.about1
   },
   {
-    title: 'Web Design',
-    description: 'I am a good designer',
-    imageUrl: ''
-  },
-  {
-    title: 'Mobile App',
-    description: 'I am a good mobile app developer',
-    imageUrl: ''
+    title: 'Backend Developement',
+    description: 'I am a Backend engineer',
+    imageUrl: images.about2
   },
   {
     title: 'Mobile App',
     description: 'I am a good mobile app developer',
-    imageUrl: ''
+    imageUrl: images.about3
+  },
+  {
+    title: 'MERN Stack',
+    description: 'I am a good mobile app developer',
+    imageUrl: images.about4
   }
 ]
 
 const About = () => {
   return (
     <>
-      <h2 className="head-text">
-        I know that
-        <span>Good Design</span>
-        <br />
-        means
-        <span>Good Business</span>
-      </h2>
+      <h2 className="head-text">I know that <span>Good Design</span><br /> means <span>Good Business</span></h2>
 
       <div className="app__profiles">
         {
