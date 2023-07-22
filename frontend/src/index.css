@@ -2,7 +2,8 @@
 
 :root {
   --font-base: 'DM Sans', sans-serif;
-  --primary-color: #edf2f8;
+  --primary-color: #f9f2ed;
+  /* else use edf2f8 as primary */
   --secondary-color: #313bac;
   --black-color: #030303;
   --light-gray-color: #e4e4e4;
