@@ -2,31 +2,39 @@ import React, { useState, useEffect } from "react";
 import "./About.scss";
 import { motion } from "framer-motion";
 import { images } from '../../constants';
+import { urlFor, client } from "../../client";
 
-const abouts = [
-  {
-    title: 'Web Developement',
-    description: 'I am a good developer',
-    imageUrl: images.about1
-  },
-  {
-    title: 'Backend Developement',
-    description: 'I am a Backend engineer',
-    imageUrl: images.about2
-  },
-  {
-    title: 'Mobile App',
-    description: 'I am a good mobile app developer',
-    imageUrl: images.about3
-  },
-  {
-    title: 'MERN Stack',
-    description: 'I am a good mobile app developer',
-    imageUrl: images.about4
-  }
-]
+// const abouts = [
+//   {
+//     title: 'Web Developement',
+//     description: 'I am a good developer',
+//     imageUrl: images.about1
+//   },
+//   {
+//     title: 'Backend Developement',
+//     description: 'I am a Backend engineer',
+//     imageUrl: images.about2
+//   },
+//   {
+//     title: 'Mobile App',
+//     description: 'I am a good mobile app developer',
+//     imageUrl: images.about3
+//   },
+//   {
+//     title: 'MERN Stack',
+//     description: 'I am a good mobile app developer',
+//     imageUrl: images.about4
+//   }
+// ]
 
 const About = () => {
+  const [abouts, setAbouts] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "abouts"]';
+    client.fetch(query).then((data) => setAbouts(data))
+  }, []);
+
   return (
     <>
       <h2 className="head-text">I know that <span>Good Design</span><br /> means <span>Good Business</span></h2>
@@ -41,7 +49,7 @@ const About = () => {
             className="app__profile-item"
             key={about.title + index}
             >
-              <img src={about.imageUrl} alt={about.title} />
+              <img src={urlFor(about.imageUrl)} alt={about.title} />
               <h2 className="bold-text" style={{marginTop: 20}}>{about.title}</h2>
               <p className="p-text" style={{marginTop: 10}}>{about.description}</p>
             </motion.div>
