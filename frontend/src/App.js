@@ -8,8 +8,8 @@ function App() {
       <Navbar />
       <Header />
       <About />
-      {/* <Work />
-      <Skills />
+      <Work />
+      {/* <Skills />
       <Testimonial />
       <Footer /> */}
     </div>
