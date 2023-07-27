@@ -33,7 +33,7 @@ const Work = () => {
             onClick={() => handleWorkFilter(item)}
             className={`app__work-filter-item app__flex p-text ${
               activeFilter === item ? "item-active" : ""
-            }}`}
+            }`}
           >
             {item}
           </div>
@@ -84,8 +84,10 @@ const Work = () => {
 
             <div className="app__work-content app__flex">
               <h4 className="bold-text">{work.title}</h4>
-              <p className="p-text" style={{ marginTop: 10 }}>{ work.description }</p>
-           
+              <p className="p-text" style={{ marginTop: 10 }}>
+                {work.description}
+              </p>
+
               <div className="app__work-tag app__flex">
                 <p className="p-text">{work.tags[0]}</p>
               </div>
@@ -97,4 +99,4 @@ const Work = () => {
   );
 };
 
-export default AppWrap(Work, 'work');
+export default AppWrap(Work, "work");
