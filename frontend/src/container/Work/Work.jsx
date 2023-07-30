@@ -19,7 +19,21 @@ const Work = () => {
     });
   }, []);
 
-  const handleWorkFilter = (item) => {};
+  const handleWorkFilter = (item) => {
+    setActiveFilter(item);
+    setAnimateCard({ y: 100, opacity: 0 });
+
+    setTimeout(() => {
+      setAnimateCard({ y: 0, opacity: 1 });
+    }, 500);
+
+    if(item === 'All') {
+      setFilterWork(works);
+    }
+    else {
+      setFilterWork(works.filter(work => work.tags.includes(item)));
+    }
+  };
   return (
     <>
       <h2 className="head-text">
@@ -27,7 +41,7 @@ const Work = () => {
       </h2>
 
       <div className="app__work-filter">
-        {["DSA", "Web App", "Mobile App", "All"].map((item, index) => (
+        {["DSA", "Web App", "React.js", "All"].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
