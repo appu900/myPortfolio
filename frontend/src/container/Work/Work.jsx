@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { AppWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Work.scss";
-import App from "../../App";
 
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState("All");
