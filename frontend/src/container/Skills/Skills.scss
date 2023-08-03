@@ -128,9 +128,32 @@
       margin-top: 5px;
       color: var(--gray-color);
     }
+
+    @media screen and (max-width: 550px) {
+      margin-top: 1rem;
+      border-left: 0;
+      &::before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 2px;
+        margin-bottom: 1rem;
+        background-color: var(--gray-color);
+      }
+    }
   }
 
+  @media screen and (max-width: 1050px) {
+    width: 50%;
+  }
 
+  @media screen and (max-width: 650px) {
+    width: 60%;
+  }
+
+  @media screen and (max-width: 550px) {
+    width: 100%;
+  }
 }
 
 .app__skills-exp-year {
