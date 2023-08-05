@@ -2,7 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { images } from "../../constants";
 import "./Header.scss";
-import { AppWrap } from '../../wrapper';
+import { AppWrap } from "../../wrapper";
+import { TypeAnimation } from "react-type-animation";
 
 const scaleVariants = {
   whileInView: {
@@ -33,8 +34,23 @@ function Header() {
           </div>
 
           <div className="tag-cmp app__flex">
-            <p className="p-text">Web Developer</p>
-            <p className="p-text">Competitive Coder</p>
+            <p className="p-text ">I love </p>
+            <TypeAnimation
+              preRenderFirstString={true}
+              sequence={[
+                500,
+                "Web Development",
+                500,
+                "Competitive Coding",
+                500,
+                "Open Source",
+              ]}
+              speed={{type: 'keyStrokeDelayInMs', value: 70}}
+              repeat={Infinity}
+              className="p-text typed-text"
+            />
+            {/* <p className="p-text">Web Developer</p>
+            <p className="p-text">Competitive Coder</p> */}
           </div>
         </div>
       </motion.div>
@@ -72,4 +88,4 @@ function Header() {
   );
 }
 
-export default AppWrap(Header, 'home');
+export default AppWrap(Header, "home");

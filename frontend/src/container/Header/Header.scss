@@ -68,13 +68,28 @@
   }
 
   .tag-cmp {
-    flex-direction: column;
+    flex-direction: row;
     margin-top: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
 
-    p {
-      width: 100%;
-      text-transform: uppercase;
-      text-align: right;
+    // p {
+    //   width: 100%;
+    //   text-transform: uppercase;
+    //   text-align: right;
+    // }
+    
+    .typed-text {
+      font-size: 0.8rem;
+      margin-left: 2px;
+      text-align: left;
+      color: var(--gray-color);
+      line-height: 1.5;
+      color: var(--secondary-color);
+    
+      @media screen and (min-width: 2000px) {
+        font-size: 1.75rem;
+      }
     }
   }
 
