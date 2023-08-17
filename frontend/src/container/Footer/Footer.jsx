@@ -35,7 +35,7 @@ const Footer = () => {
   }
   return (
     <>
-      <h2 className="head0-text">Chat with me</h2>
+      <h2 className="head-text">Chat with me</h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card">
@@ -45,7 +45,7 @@ const Footer = () => {
 
         <div className="app__footer-card">
           <img src={images.mobile} alt="mobile" />
-          <a href="tel:+91 7978640184" className="p-text">+91-7978640184</a>
+          <a href="tel:+91 7735041901" className="p-text">+91-7735041901</a>
         </div>
       </div>
 
@@ -64,12 +64,11 @@ const Footer = () => {
           <div>
             <textarea
             className='p-text'
-            placeholder='Your Message' value={message} name={message} onChange={handleChangeInput}
+            placeholder='Your Message' value={message} name="message" onChange={handleChangeInput}
             >
-
             </textarea>
           </div>
-          <button type="button" className="p-text" onClick={handleSubmit}>{loading ? 'Sending' : 'Send Message'}Send Message</button>
+          <button type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
         </div>
         :
         <div>
